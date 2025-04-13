@@ -27,7 +27,7 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>,
         workgroupBarrier();
     }
 
-    // Step 3: Thread 0 writes the result of this workgroup to resultBuffer
+    // Step 3: Thread 0 of each workgroup writes the result of this workgroup to resultBuffer
     if (localIndex == 0u) {
         resultBuffer[group_id.x] = partialSums[0];
     }
